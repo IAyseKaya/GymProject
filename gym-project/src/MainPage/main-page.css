@@ -1,0 +1,18 @@
+.button {
+    margin: 0;
+    height: auto;
+    background: transparent;
+    padding: 0;
+    border: none;
+  }
+  
+  .button {
+    letter-spacing: 3px;
+    text-decoration: none;
+    font-size: 2em;
+    font-family: "Arial";
+    position: relative;
+    text-transform: uppercase;
+    color: transparent;
+    -webkit-text-stroke: 3px rgb(0, 247, 0);
+  }
