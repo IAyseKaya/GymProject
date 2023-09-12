@@ -81,6 +81,14 @@ function MainPage() {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
+
+
+    const [BMI, setBMI] = useState(0);
+    const [weight, setWeight] = useState(0);
+    const [height, setHeight] = useState(0);
+    const [age, setAge] = useState(0);
+    const [sex, setSex] = useState(true);
+
     const prevSlide = () => {
         const isFirstSlide = currentIndex === 0;
         const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
@@ -94,8 +102,26 @@ function MainPage() {
 
     };
 
+    const calculateBMI = (event) => {
+
+        event.preventDefault();
+        if (height >= 100) {
+            var dividing = (height / 100);
+            var squareHeight = (dividing) * (dividing);
+            var totalBMI = (weight / squareHeight);
+            totalBMI = Number(totalBMI.toFixed(2));
+            setBMI(totalBMI);
+        }
+        else {
+        }
+
+        return console.log(totalBMI);
+    }
+
+
+
     return (
-        <div className="mainpage bg-black">
+        <div className="mainpage bg-black text-white">
             <div className="slider">
                 <div className='w-full h-[900px] m-auto relative group'>
                     <div
@@ -105,15 +131,15 @@ function MainPage() {
                         <div className="slider-text absolute flex items-center justify-center h-full w-full">
                             <div className="text flex items-center justify-center h-full w-full">
                                 <div className="flex flex-col items-center justify-center m-10 h-full w-full">
-                                    <h1 className="text-4xl font-bold tracking-tight drop-shadow-lg  text-white sm:text-6xl">
+                                    <h1 className="text-4xl font-bold tracking-tight drop-shadow-lg   sm:text-6xl">
                                         {slides[currentIndex].header}
                                     </h1>
-                                    <p className="mt-4 text-xl text-white drop-shadow-lg ">
+                                    <p className="mt-4 text-xl  drop-shadow-lg ">
                                         {slides[currentIndex].description}
                                     </p>
                                     <a
                                         href="login"
-                                        className="font-semibold text-lg leading-6 text-white"
+                                        className="font-semibold text-lg leading-6 "
                                     >
                                         {slides[currentIndex].button} <span aria-hidden="true">&rarr;</span>
                                     </a>
@@ -122,12 +148,12 @@ function MainPage() {
                         </div>
                     </div>
                     {/* Left Arrow */}
-                    <div className=' group-hover:block absolute top-[50%] -translate-x-0  left-5 text-2xl p-2 text-white cursor-pointer'>
+                    <div className=' group-hover:block absolute top-[50%] -translate-x-0  left-5 text-2xl p-2  cursor-pointer'>
 
                         <i className="fa-solid fa-chevron-left" onClick={prevSlide} size={30} ></i>
                     </div>
                     {/* Right Arrow */}
-                    <div className=' group-hover:block absolute top-[50%] -translate-x-0  right-5 text-2xl  p-2 text-white cursor-pointer'>
+                    <div className=' group-hover:block absolute top-[50%] -translate-x-0  right-5 text-2xl  p-2  cursor-pointer'>
 
                         <i className="fa-solid fa-chevron-right " onClick={nextSlide} size={30}></i>
                     </div>
@@ -138,51 +164,63 @@ function MainPage() {
                     <div className="relative isolate overflow-hidden py-16 sm:py-24 lg:py-32">
                         <div className="mx-auto max-w-7xl px-6 lg:px-8">
                             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+
                                 <div className="max-w-xl lg:max-w-lg">
-                                    <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">BMI healthy weight calculator</h2>
-                                    <p className="mt-4 text-lg leading-8 text-gray-300">
+                                    <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl">BMI healthy weight calculator</h2>
+                                    <p className=" mt-4 text-lg leading-8 text-gray-500">
                                         The body mass index (BMI) is a measure that uses your height and weight to work out if your weight is healthy.
                                         This calculator for adult.
                                     </p>
                                     <div className="mt-6 flex max-w-md gap-x-4">
-                                        <label htmlFor="email-address" className="sr-only">
-                                            Email address
-                                        </label>
                                         <form className="w-full max-w-lg">
                                             <div className="flex flex-wrap -mx-3 mb-6">
                                                 <div className="w-full md:w-1/2 px-3  pt-2">
-                                                    <label 
-                                                    className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" 
-                                                    for="grid-last-name">
-                                                        Height
+                                                    <label
+                                                        className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
+                                                    >
+                                                        Height - cm <p className='text-red-700'> *</p>
                                                     </label>
-                                                    <input 
-                                                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                                                    id="grid-height" 
-                                                    type="number" placeholder="Height" />
+                                                    <input
+
+                                                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                                        id="grid-height"
+                                                        type="number"
+                                                        placeholder="Height - cm"
+                                                        onChange={(e) => { setHeight(e.target.value) }}
+                                                    />
                                                 </div>
                                                 <div className="w-full md:w-1/2 px-3 pt-2">
-                                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-                                                        Weight
+                                                    <label className=" uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                                                        Weight - kg <p className='text-red-700'> *</p>
                                                     </label>
-                                                    <input 
-                                                    className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                                                    id="grid-weight" 
-                                                    type="number" placeholder="Weight" />
+                                                    <input
+                                                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                                        id="grid-weight"
+                                                        type="number"
+                                                        placeholder="Weight - kg"
+                                                        onChange={(e) => { setWeight(e.target.value) }}
+                                                    />
                                                 </div>
                                                 <div className="w-full md:w-1/2 px-3 pt-2">
-                                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-                                                        Age
+                                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                                                        Age - number -<p className='text-red-700'>optional</p>
                                                     </label>
-                                                    <input className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                                                    id="grid-age" type="number" placeholder="Age" />
+                                                    <input
+                                                        className="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                                        id="grid-age"
+                                                        type="number"
+                                                        placeholder="Age"
+                                                        onChange={(e) => { setAge(e.target.value) }}
+                                                    />
                                                 </div>
                                                 <div className="w-full md:w-1/2 px-3 pt-2">
-                                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-                                                        Sex
+                                                    <label className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" >
+                                                        Sex -<p className='text-red-700'>optional</p>
                                                     </label>
-                                                    <select className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-500 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" 
-                                                    id="grid-sex">
+                                                    <select
+                                                        onChange={(e) => { setSex(e.target.value) }}
+                                                        className="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-500 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+                                                        id="grid-sex">
                                                         <option>Men</option>
                                                         <option>Women</option>
                                                     </select>
@@ -191,7 +229,8 @@ function MainPage() {
 
                                             <button
                                                 type="submit"
-                                                className="flex-none w-full  pt-2 rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
+                                                className="flex-none w-full  pt-2 rounded-md bg-red-500 px-3.5 py-2.5 text-sm font-semibold  shadow-sm hover:bg-red-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-500"
+                                                onClick={calculateBMI}
                                             >
                                                 Calculate
                                             </button>
@@ -199,26 +238,16 @@ function MainPage() {
 
                                     </div>
                                 </div>
-                                <dl className="grid grid-cols-1 gap-x-8 gap-y-10 sm:grid-cols-2 lg:pt-2">
-                                    <div className="flex flex-col items-start">
 
-                                        <dt className="mt-4 font-semibold text-white">How the BMI is calculated</dt>
-                                        <dd className="mt-2 leading-7 text-gray-400">
-                                            A BMI calculation in the healthy weight range is between 18.5 to 24.9.
-                                            The BMI calculation divides an adult's weight in kilograms (kg) by their height in metres (m) squared.
-
-                                        </dd>
+                                <div className='flex flex-col items-center justify-center'>
+                                    <div className="showBMI flex flex-col items-center justify-center">
+                                        <img src="https://sipfund.com/images/blog/new-riskometer.png" alt="bmi" className='object-cover' />
+                                        <p className='text-4xl font-bold tracking-tight drop-shadow-lg flex items-center justify-center  h-20 w-full'>
+                                            BMI :  {BMI}
+                                        </p>
                                     </div>
-                                    <div className="flex flex-col items-start">
+                                </div>
 
-                                        <dt className="mt-4 font-semibold text-white">Muscle mass</dt>
-                                        <dd className="mt-2 leading-7 text-gray-400">
-                                            The BMI calculation does not include muscle mass, which weighs more than fat.
-
-                                            This means muscular adults and athletes may be classed as overweight or obese even though their body fat is low.
-                                        </dd>
-                                    </div>
-                                </dl>
                             </div>
                         </div>
                     </div>
@@ -228,10 +257,10 @@ function MainPage() {
                 <div className="py-24 sm:py-32">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center justify-center">
                         <div className="mx-auto  lg:mx-0 flex flex-col items-center justify-center">
-                            <h2 className="text-3xl font-bold tracking-tight text-gray-200 sm:text-4xl">
+                            <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl">
                                 Choose the membership package that suits you best
                             </h2>
-                            <p className="mt-2 text-lg leading-8 text-gray-300">
+                            <p className="mt-2 text-lg leading-8 text-gray-500">
                                 A one-time participation fee for new memberships is calculated at the payment step.
                             </p>
                         </div>
@@ -240,14 +269,14 @@ function MainPage() {
                                 <article key={plan.id} className="item-card flex items-center justify-center w-[300px] h-[400px] transition duration-500  ease-out rounded-3xl bg-gradient-to-r from-red-900 to-red-500 max-w-xl flex-col hover:scale-110 ">
                                     <div className="w-4/5 h-4/5">
                                         <div className="group relative">
-                                            <h3 className="mt-3 text-lg font-semibold leading-6 text-white group-hover:text-gray-100">
+                                            <h3 className="mt-3 text-lg font-semibold leading-6">
                                                 <a href={plan.href}>
-                                                    <button data-text="Awesome" class="button">
-                                                        <span class="actual-text">&nbsp;{plan.title}&nbsp;</span>
+                                                    <button data-text="Awesome" className="button">
+                                                        <span className="actual-text">&nbsp;{plan.title}&nbsp;</span>
                                                     </button>
                                                 </a>
                                             </h3>
-                                            <p className="mt-5 mb-5 text-sm leading-6 text-white">
+                                            <div className="mt-5 mb-5 text-sm leading-6 text-white">
                                                 <ul
                                                     role="list"
                                                     className="mt-8 text-sm leading-6 text-white"
@@ -259,7 +288,7 @@ function MainPage() {
                                                         </li>
                                                     ))}
                                                 </ul>
-                                            </p>
+                                            </div>
                                         </div>
                                     </div>
                                     <a href="/"
