@@ -26,10 +26,10 @@ function Navbar() {
     window.addEventListener('scroll', changeBackground);
 
     return (
-            <div className={navBack ? 'navbar w-full sticky top-0 z-50 h-20 bg-black transition duration-500  ease-out ' 
+            <div className={navBack ? 'navbar w-full sticky top-0 z-40 h-20 bg-black text-white transition duration-500  ease-out ' 
                                     : 'navbar w-full sticky top-0 z-50 bg-transparent transition duration-500 ease-out'}>
                 
-                <header className="absolute inset-x-0 top-0 z-40">
+                <header className="absolute inset-x-0 top-0 z-30">
                     <nav className="flex items-center justify-between p-6 lg:px-8" aria-label="Global">
                         <div className="flex lg:flex-1">
                             <a href="/" className="-m-1.5 p-1.5">
@@ -53,7 +53,7 @@ function Navbar() {
                         </div>
                         <div className="hidden lg:flex lg:gap-x-12 drop-shadow-2xl">
                             {navigation.map((item) => (
-                                <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white">
+                                <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white ">
                                     {item.name}
                                 </a>
                             ))}

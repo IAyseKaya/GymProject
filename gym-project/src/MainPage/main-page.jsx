@@ -121,7 +121,7 @@ function MainPage() {
 
 
     return (
-        <div className="mainpage bg-black text-white">
+        <div className="mainpage ">
             <div className="slider">
                 <div className='w-full h-[900px] m-auto relative group'>
                     <div
@@ -131,15 +131,15 @@ function MainPage() {
                         <div className="slider-text absolute flex items-center justify-center h-full w-full">
                             <div className="text flex items-center justify-center h-full w-full">
                                 <div className="flex flex-col items-center justify-center m-10 h-full w-full">
-                                    <h1 className="text-4xl font-bold tracking-tight drop-shadow-lg   sm:text-6xl">
+                                    <h1 className="text-4xl text-white font-bold tracking-tight drop-shadow-lg   sm:text-6xl">
                                         {slides[currentIndex].header}
                                     </h1>
-                                    <p className="mt-4 text-xl  drop-shadow-lg ">
+                                    <p className="mt-4 text-xl text-white drop-shadow-lg ">
                                         {slides[currentIndex].description}
                                     </p>
                                     <a
                                         href="login"
-                                        className="font-semibold text-lg leading-6 "
+                                        className="font-semibold text-white text-lg leading-6 "
                                     >
                                         {slides[currentIndex].button} <span aria-hidden="true">&rarr;</span>
                                     </a>
@@ -150,12 +150,12 @@ function MainPage() {
                     {/* Left Arrow */}
                     <div className=' group-hover:block absolute top-[50%] -translate-x-0  left-5 text-2xl p-2  cursor-pointer'>
 
-                        <i className="fa-solid fa-chevron-left" onClick={prevSlide} size={30} ></i>
+                        <i className="fa-solid fa-chevron-left text-white" onClick={prevSlide} size={30} ></i>
                     </div>
                     {/* Right Arrow */}
                     <div className=' group-hover:block absolute top-[50%] -translate-x-0  right-5 text-2xl  p-2  cursor-pointer'>
 
-                        <i className="fa-solid fa-chevron-right " onClick={nextSlide} size={30}></i>
+                        <i className="fa-solid fa-chevron-right text-white " onClick={nextSlide} size={30}></i>
                     </div>
                 </div>
             </div>

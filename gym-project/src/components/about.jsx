@@ -1,6 +1,7 @@
 function About() {
     return (
-        <div className="about bg-black pt-20">
+        <div className="about ">
+            <div className="nav-block bg-black h-[80px]"></div>
             <section className="relative overflow-hidden px-6 py-24 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
                     <img 
@@ -9,7 +10,7 @@ function About() {
                         alt="" 
                     />
                     <figure className="mt-10">
-                        <blockquote className="text-center text-xl font-semibold leading-8 text-gray-100 sm:text-2xl sm:leading-9">
+                        <blockquote className="text-center text-xl font-semibold leading-8 sm:text-2xl sm:leading-9">
                             <p>
                                 “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
                                 molestiae. Numquam corrupti in laborum sed rerum et corporis.”
@@ -22,11 +23,11 @@ function About() {
                                 alt=""
                             />
                             <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                                <div className="font-semibold text-gray-100">İsmet Ayşe Kaya</div>
-                                <svg viewBox="0 0 2 2" width={3} height={3} aria-hidden="true" className="fill-gray-100">
+                                <div className="font-semibold ">İsmet Ayşe Kaya</div>
+                                <svg viewBox="0 0 2 2" width={3} height={3} aria-hidden="true" className="fill-gray-300">
                                     <circle cx={1} cy={1} r={1} />
                                 </svg>
-                                <div className="text-gray-300">Developer</div>
+                                <div className="text-gray-500">Developer</div>
                             </div>
                         </figcaption>
                     </figure>
