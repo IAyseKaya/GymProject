@@ -2,7 +2,7 @@ function About() {
     return (
         <div className="about ">
             <div className="nav-block bg-black h-[80px]"></div>
-            <section className="relative overflow-hidden px-6 py-24 sm:py-32 lg:px-8">
+            <section className="relative min-h-[800px] overflow-hidden px-6 py-24 sm:py-32 lg:px-8">
             <div className="mx-auto max-w-2xl lg:max-w-4xl">
                     <img 
                         className="mx-auto h-12" 

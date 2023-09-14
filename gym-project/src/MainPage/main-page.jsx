@@ -84,6 +84,7 @@ function MainPage() {
 
 
     const [BMI, setBMI] = useState(0);
+    const [str, setStr] = useState("");
     const [weight, setWeight] = useState(0);
     const [height, setHeight] = useState(0);
     const [age, setAge] = useState(0);
@@ -105,17 +106,40 @@ function MainPage() {
     const calculateBMI = (event) => {
 
         event.preventDefault();
-        if (height >= 100) {
-            var dividing = (height / 100);
-            var squareHeight = (dividing) * (dividing);
-            var totalBMI = (weight / squareHeight);
-            totalBMI = Number(totalBMI.toFixed(2));
-            setBMI(totalBMI);
+        var dividing = (height / 100);
+        var squareHeight = (dividing) * (dividing);
+        var totalBMI = (weight / squareHeight);
+        totalBMI = Number(totalBMI.toFixed(2));
+        setBMI(totalBMI);
+        console.log(totalBMI);
+        console.log(str)
+
+        var newStr = "";
+
+        if (totalBMI < 18.5) {
+            newStr = "Underweight";
+        }
+        else if ( totalBMI < 25) {
+
+            newStr = "Normal";
+        }
+        else if (totalBMI < 30) {
+
+            newStr = "Overweight";
+        }
+        else if (totalBMI < 35) {
+
+            newStr = "Obese";
+        }
+        else if (35 < totalBMI) {
+
+            newStr = "Extremely Obese";
         }
         else {
+            newStr = "Error";
         }
-
-        return console.log(totalBMI);
+        
+        setStr(newStr);
     }
 
 
@@ -165,15 +189,15 @@ function MainPage() {
                         <div className="mx-auto max-w-7xl px-6 lg:px-8">
                             <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
 
-                                <div className="max-w-xl lg:max-w-lg">
-                                    <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl">BMI healthy weight calculator</h2>
+                                <div className="max-w-xl lg:max-w-lg flex flex-col items-start justify-center">
+                                    <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">BMI Healthy Weight Calculator</h2>
                                     <p className=" mt-4 text-lg leading-8 text-gray-500">
                                         The body mass index (BMI) is a measure that uses your height and weight to work out if your weight is healthy.
                                         This calculator for adult.
                                     </p>
-                                    <div className="mt-6 flex max-w-md gap-x-4">
-                                        <form className="w-full max-w-lg">
-                                            <div className="flex flex-wrap -mx-3 mb-6">
+                                    <div className="mt-6 gap-x-4 flex items-center justify-center">
+                                        <form className="w-full max-w-lg ">
+                                            <div className="flex flex-wrap -mx-3 mb-6 ">
                                                 <div className="w-full md:w-1/2 px-3  pt-2">
                                                     <label
                                                         className="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2"
@@ -241,9 +265,12 @@ function MainPage() {
 
                                 <div className='flex flex-col items-center justify-center'>
                                     <div className="showBMI flex flex-col items-center justify-center">
-                                        <img src="https://sipfund.com/images/blog/new-riskometer.png" alt="bmi" className='object-cover' />
+                                        <img src="https://www.pnbmetlife.com/content/dam/pnb-metlife/images/icons/bmi-calculator/meter.png" alt="bmi" className='object-cover' />
                                         <p className='text-4xl font-bold tracking-tight drop-shadow-lg flex items-center justify-center  h-20 w-full'>
                                             BMI :  {BMI}
+                                        </p>
+                                        <p className='text-4xl font-bold tracking-tight drop-shadow-lg flex items-center justify-center  h-20 w-full'>
+                                            {str}
                                         </p>
                                     </div>
                                 </div>

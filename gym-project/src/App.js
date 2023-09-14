@@ -29,11 +29,15 @@ function App() {
       
       <BrowserRouter>
         <Navbar />
-        <div className="sticky h-0 relative ml-40 bg-transparent top-6 z-50 cursor-pointer text-lg flex item-center justify-start border-spacing-1">
-        <label class="switch">
-          <input  type="checkbox" onClick={changeMode} checked={theme == true} />
-          <span class="slider"></span>
-        </label>
+        <div className="sticky h-0  ml-40 bg-transparent top-6 z-50 cursor-pointer text-lg flex item-center justify-start border-spacing-1">
+        <div className="inner relative">
+          <label className="switch">
+            <input  type="checkbox" onClick={changeMode} onChange={(e)=>{}}
+            checked={theme == true} />
+            <span className="slider"></span>
+          </label>
+        </div>
+        
       </div>
         <Routes>
           <Route index element={<MainPage />} />
