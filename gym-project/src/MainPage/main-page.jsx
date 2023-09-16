@@ -77,14 +77,38 @@ const plans = [
     },
 ];
 
+const callouts = [
+    {
+      name: 'Pilates lessons',
+      description: 'Pilates is an exercise program that focuses on the core muscles that help keep the body balanced and have an important function in supporting the spine.',
+      imageSrc: 'https://media.discordapp.net/attachments/988883199209926710/1146903408570269696/pexels-andrea-piacquadio-868483.jpg?width=720&height=480',
+      imageAlt: 'sports',
+      href: '#',
+    },
+    {
+      name: 'For those who have sports as an integral part of their lives.',
+      description: 'Push your limits with expert instructors, high-tech equipment and group lessons.',
+      imageSrc: 'https://media.discordapp.net/attachments/988883199209926710/1146903421157396530/pexels-william-choquette-1954524.jpg?width=720&height=480',
+      imageAlt: 'sports',
+      href: '#',
+    },
+    {
+      name: 'Personal sports coach',
+      description: 'You can do more professional and planned sports with your personal sports coach.',
+      imageSrc: 'https://media.discordapp.net/attachments/988883199209926710/1146906284717781125/sule-makaroglu-r3C6ghRxDxc-unsplash.jpg?width=720&height=479',
+      imageAlt: 'sports',
+      href: '#',
+    },
+  ];
+  
+
 function MainPage() {
 
     const [currentIndex, setCurrentIndex] = useState(0);
 
-
-
     const [BMI, setBMI] = useState(0);
     const [str, setStr] = useState("");
+
     const [weight, setWeight] = useState(0);
     const [height, setHeight] = useState(0);
     const [age, setAge] = useState(0);
@@ -119,7 +143,7 @@ function MainPage() {
         if (totalBMI < 18.5) {
             newStr = "Underweight";
         }
-        else if ( totalBMI < 25) {
+        else if (totalBMI < 25) {
 
             newStr = "Normal";
         }
@@ -138,7 +162,7 @@ function MainPage() {
         else {
             newStr = "Error";
         }
-        
+
         setStr(newStr);
     }
 
@@ -281,7 +305,7 @@ function MainPage() {
                 </div>
             </div>
             <div id='price' className="cards w-full flex items-center justify-center">
-                <div className="py-24 sm:py-32">
+                <div className="">
                     <div className="mx-auto max-w-7xl px-6 lg:px-8 flex flex-col items-center justify-center">
                         <div className="mx-auto  lg:mx-0 flex flex-col items-center justify-center">
                             <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl">
@@ -330,6 +354,35 @@ function MainPage() {
                     </div>
                 </div>
             </div>
+
+            <div className="grid-section ">
+                <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                    <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
+                        <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
+                            {callouts.map((callout) => (
+                                <div key={callout.name} className="group relative">
+                                    <div className="relative h-80 w-full overflow-hidden rounded-lg  sm:aspect-h-1 sm:aspect-w-2 lg:aspect-h-1 lg:aspect-w-1 group-hover:opacity-75 sm:h-64">
+                                        <img
+                                            src={callout.imageSrc}
+                                            alt={callout.imageAlt}
+                                            className="h-full w-full object-cover object-center"
+                                        />
+                                    </div>
+                                    <h3 className="mt-6 text-sm ">
+                                        <a href={callout.href}>
+                                            <span className="absolute inset-0" />
+                                            {callout.name}
+                                        </a>
+                                    </h3>
+                                    <p className="text-base font-semibold ">{callout.description}</p>
+                                </div>
+                            ))}
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         </div>
     );
 }
