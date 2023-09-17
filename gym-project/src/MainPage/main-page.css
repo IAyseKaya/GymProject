@@ -16,3 +16,98 @@
     color: transparent;
     -webkit-text-stroke: 3px rgb(0, 247, 0);
   }
+  .people-card {
+    width: 350px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    background-color: #fefefe;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+  }
+  
+  .people-card::before {
+    content: "";
+    width: 350px;
+    height: 100px;
+    position: absolute;
+    top: 0;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: 3px solid rgb(0, 247, 0);
+    background: linear-gradient(40deg, rgb(68, 7, 3) 0%, rgb(255, 0, 0) 50%, rgb(117, 4, 4) 100%);
+    transition: all 0.3s ease;
+  }
+  
+  .people-card * {
+    z-index: 1;
+  }
+  
+  .people-image img {
+    width: 90px;
+    height: 90px;
+    background-color: rgb(129, 0, 0);
+    border-radius: 50%;
+    border: 4px solid #fefefe;
+    margin-top: 30px;
+    object-fit: cover;
+    transition: all 0.5s ease;
+  }
+  
+  .people-card-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    transition: all 0.5s ease;
+  }
+  
+  .people-card-info span {
+    font-weight: 600;
+    font-size: 24px;
+    color: #161A42;
+    margin-top: 15px;
+    line-height: 5px;
+  }
+  
+  .people-card-info p {
+    color: rgba(0, 0, 0, 0.5);
+  }
+  
+  .people-button {
+    text-decoration: none;
+    background-color: rgb(0, 247, 0);
+    color: white;
+    padding: 5px 20px;
+    border-radius: 5px;
+    border: 1px solid white;
+    transition: all 0.5s ease;
+  }
+  
+  .people-card:hover {
+    width: 300px;
+    border-radius: 250px;
+  }
+  
+  .people-card:hover::before {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border-bottom: none;
+    transform: scale(0.95);
+  }
+  
+  .people-card:hover .card-info {
+    transform: translate(0%,-15%);
+  }
+  
+  .people-button:hover {
+    background-color: red;
+    transform: scale(1.1);
+  }

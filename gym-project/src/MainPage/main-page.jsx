@@ -79,28 +79,64 @@ const plans = [
 
 const callouts = [
     {
-      name: 'Pilates lessons',
-      description: 'Pilates is an exercise program that focuses on the core muscles that help keep the body balanced and have an important function in supporting the spine.',
-      imageSrc: 'https://media.discordapp.net/attachments/988883199209926710/1146903408570269696/pexels-andrea-piacquadio-868483.jpg?width=720&height=480',
-      imageAlt: 'sports',
-      href: '#',
+        name: 'Pilates lessons',
+        description: 'Pilates is an exercise program that focuses on the core muscles that help keep the body balanced and have an important function in supporting the spine.',
+        imageSrc: 'https://media.discordapp.net/attachments/988883199209926710/1146903408570269696/pexels-andrea-piacquadio-868483.jpg?width=720&height=480',
+        imageAlt: 'sports',
+        href: '#',
     },
     {
-      name: 'For those who have sports as an integral part of their lives.',
-      description: 'Push your limits with expert instructors, high-tech equipment and group lessons.',
-      imageSrc: 'https://media.discordapp.net/attachments/988883199209926710/1146903421157396530/pexels-william-choquette-1954524.jpg?width=720&height=480',
-      imageAlt: 'sports',
-      href: '#',
+        name: 'For those who have sports as an integral part of their lives.',
+        description: 'Push your limits with expert instructors, high-tech equipment and group lessons.',
+        imageSrc: 'https://media.discordapp.net/attachments/988883199209926710/1146903421157396530/pexels-william-choquette-1954524.jpg?width=720&height=480',
+        imageAlt: 'sports',
+        href: '#',
     },
     {
-      name: 'Personal sports coach',
-      description: 'You can do more professional and planned sports with your personal sports coach.',
-      imageSrc: 'https://media.discordapp.net/attachments/988883199209926710/1146906284717781125/sule-makaroglu-r3C6ghRxDxc-unsplash.jpg?width=720&height=479',
-      imageAlt: 'sports',
-      href: '#',
+        name: 'Personal sports coach',
+        description: 'You can do more professional and planned sports with your personal sports coach.',
+        imageSrc: 'https://media.discordapp.net/attachments/988883199209926710/1146906284717781125/sule-makaroglu-r3C6ghRxDxc-unsplash.jpg?width=720&height=479',
+        imageAlt: 'sports',
+        href: '#',
     },
-  ];
-  
+];
+
+const people = [
+    {
+        name: 'Leslie Alexander',
+        role: 'Pilates Instructor',
+        imageUrl:
+            'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+        imageAlt:
+            'person',
+    },
+    {
+        name: 'Dries Vincent',
+        role: 'Personal Trainer',
+        imageUrl:
+            'https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80',
+        imageAlt:
+            'person',
+    },
+    {
+        name: 'Courtney Henry',
+        role: 'Personal Trainer',
+        imageUrl:
+            'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=987&q=80',
+        imageAlt:
+            'person',
+    },
+    {
+        name: 'Tom Cook',
+        role: 'Pilates Instructor',
+        imageUrl:
+            'https://images.unsplash.com/photo-1603415526960-f7e0328c63b1?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80',
+        imageAlt:
+            'person',
+    },
+    
+]
+
 
 function MainPage() {
 
@@ -351,6 +387,37 @@ function MainPage() {
                                 </article>
                             ))}
                         </div>
+                    </div>
+                </div>
+            </div>
+
+            <div className="people">
+                <div className=" py-24 sm:py-32">
+                    <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
+                        <div className="max-w-2xl">
+                            <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl">Meet our sports coaches</h2>
+                            <p className="mt-6 text-lg leading-8 ">
+                            “Sports Coach” plans what the individual should do to be more successful, helps the individual see his blind spots, helps him get out of the emotional or physical vortex he is in, and plays an active role in helping the individual meet his true potential. As a result of success or failure; Instead of seeing only the statistical expressions and the result table of the result, it also enables the athlete to see the factors that lead to this success or failure. It offers programmed, time-bound and versatile training for success in sports, as in all areas of life.
+
+“Sports Coach” does not only coach the team; It instills a philosophy of life and culture in team players and fans.
+                            </p>
+                        </div>
+                        <ul role="list" className="grid gap-x-8 gap-y-12 sm:grid-cols-2 sm:gap-y-16 xl:col-span-2">
+                            {people.map((person) => (
+                                <li key={person.name}>
+                                    <div class="people-card">
+                                        <div class="people-image">
+                                            <img src={person.imageUrl} alt={person.imageAlt} />
+                                        </div>
+                                        <div class="people-card-info">
+                                            <span>{person.role}</span>
+                                            <p>{person.role}</p>
+                                        </div>
+                                        <a class="people-button" href="#">Create An Appointment</a>
+                                    </div>
+                                </li>
+                            ))}
+                        </ul>
                     </div>
                 </div>
             </div>
