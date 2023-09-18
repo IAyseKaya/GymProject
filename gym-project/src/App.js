@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import MainPage from "./MainPage/main-page.jsx";
 import About from "./components/about";
+import GroupLessons from "./components/groupLessons";
 import Login from "./components/login";
 import Navbar from "./components/navbar/Navbar.jsx"
 import Footer from "./components/footer/Footer.jsx"
@@ -44,6 +45,7 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="login" element={<Login />} />
           <Route path="about" element={<About />} />
+          <Route path="lessons" element={<GroupLessons />} />
         </Routes>
         <Footer/>
       </BrowserRouter>
