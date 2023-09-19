@@ -66,7 +66,7 @@ function MainPage() {
             <CalculateBMI/>
            <MembershipType/>
             <div className="coaches">
-                <div className=" py-24 sm:py-32">
+                <div className=" p-24 sm:py-32">
                     <div className="mx-auto grid max-w-7xl gap-x-8 gap-y-20 px-6 lg:px-8 xl:grid-cols-3">
                         <div className="max-w-2xl">
                             <h2 className="text-3xl font-bold tracking-tight  sm:text-4xl">Meet our sports coaches</h2>
@@ -96,9 +96,9 @@ function MainPage() {
                 </div>
             </div>
 
-            <div className="grid-section ">
+            <div className="grid-section mb-40 ">
                 <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-                    <div className="mx-auto max-w-2xl py-16 sm:py-24 lg:max-w-none lg:py-32">
+                    <div className="mx-auto max-w-2xl lg:max-w-none">
                         <div className="mt-6 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-6 lg:space-y-0">
                             {callouts.map((callout) => (
                                 <div key={callout.name} className="group relative">

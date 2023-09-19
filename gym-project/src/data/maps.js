@@ -1,29 +1,57 @@
 const maps = [
     {
         id: 1,
-        title: 'DISCOVER',
+        title: 'LESSONS ',
         list: [
-            'Clubs and Studios', 'My Account', 'Membership Packages', 'Price list',
+            'Clubs and Studios','Lessons',
         ],
-        href: '/'
+        href: 'lessons'
     },
     {
         id: 2,
         title: 'ABOUT',
         list: [
-            'Career', 'Institutional', 'Terms & Policies', 'Support',
+             'Terms & Policies', 'Support',
         ],
         href: 'about'
     },
+   
+    
     {
         id: 3,
-        title: 'CLUBS AND CALCULATION TOOLS',
+        title: 'CALCULATION TOOLS',
         list: [
-            'Body mass index', 'Classes', 'Campaigns',
+            'Body mass index',
 
+        ],
+        href: 'calculator'
+    },  
+    {   
+        id: 4,
+        title: 'MEMBERSHIPS',
+        list: [
+            'Membership Packages', 'Price list',
+        ],
+        href: 'membership'
+    },
+    {   
+        id: 5,
+        title: 'DISCOVER',
+        list: [
+        'Campaigns','Career', 'Institutional',
         ],
         href: '/'
     },
+    {   
+        id: 6,
+        title: 'ACCOUNT',
+        list: [
+            'My Account', 'Login' , 
+        ],
+       
+        href: 'login'
+    },
+    
 
 
 ];
