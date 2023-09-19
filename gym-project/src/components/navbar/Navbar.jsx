@@ -1,14 +1,7 @@
 import React, { useState } from 'react';
 import { Dialog } from '@headlessui/react';
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
-
-
-const navigation = [
-    { name: 'Group Lessons', href: 'lessons' },
-    { name: 'My Account', href: 'login' },
-    { name: 'Support', href: 'about' },
-    { name: 'About Us', href: 'about' },
-]
+import navigation from '../../data/navbar.js';
 
 function Navbar() {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
@@ -44,7 +37,7 @@ function Navbar() {
                         <div className="flex lg:hidden">
                             <button
                                 type="button"
-                                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-white"
+                                className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-red-500"
                                 onClick={() => setMobileMenuOpen(true)}
                             >
                                 <span className="sr-only">Open main menu</span>
@@ -53,13 +46,13 @@ function Navbar() {
                         </div>
                         <div className="hidden lg:flex lg:gap-x-12 drop-shadow-2xl">
                             {navigation.map((item) => (
-                                <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 text-white ">
+                                <a key={item.name} href={item.href} className="text-sm font-semibold leading-6 ">
                                     {item.name}
                                 </a>
                             ))}
                         </div>
                         <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-                            <a href="login" className="text-sm font-semibold leading-6 text-white">
+                            <a href="login" className="text-sm font-semibold leading-6 ">
                                 Log in <span aria-hidden="true">&rarr;</span>
                             </a>
                         </div>
@@ -111,6 +104,7 @@ function Navbar() {
                         </Dialog.Panel>
                     </Dialog>
                 </header>
+                
             </div>
     );
 }

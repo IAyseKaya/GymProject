@@ -1,35 +1,6 @@
 import React from 'react';
 import './Footer.css';
-
-const plans = [
-    {
-        id: 1,
-        title: 'DISCOVER',
-        list: [
-            'Clubs and Studios', 'My Account', 'Membership Packages', 'Price list',
-        ],
-        href: '/'
-    },
-    {
-        id: 2,
-        title: 'ABOUT',
-        list: [
-            'Career', 'Institutional', 'Terms & Policies', 'Support',
-        ],
-        href: 'about'
-    },
-    {
-        id: 3,
-        title: 'CLUBS AND CALCULATION TOOLS',
-        list: [
-            'Body mass index', 'Classes', 'Campaigns',
-
-        ],
-        href: '/'
-    },
-
-
-]
+import maps from '../../data/maps';
 
 function Footer() {
 
@@ -48,13 +19,13 @@ function Footer() {
                         <div className="mx-auto row-span-1 col-span-2  min-w-[600px] flex max-w-2xl flex-col gap-y-4">
                             <div className="flex items-center justify-center ">
                                 <dl className="grid grid-cols-1 gap-x-8 text-center lg:grid-cols-3">
-                                    {plans.map((plan) => (
-                                        <article key={plan.id} className="item-card flex flex-col max-w-xl ">
+                                    {maps.map((map) => (
+                                        <article key={map.id} className="item-card flex flex-col max-w-xl ">
                                             <div >
                                                 <div className="group relative">
                                                     <h3 className="mt-3 text-lg font-semibold leading-6">
-                                                        <a href={plan.href}>
-                                                            <span >{plan.title}</span>
+                                                        <a href={map.href}>
+                                                            <span >{map.title}</span>
                                                         </a>
                                                     </h3>
                                                     <div className="mt-5 mb-5 text-sm leading-6 ">
@@ -62,9 +33,9 @@ function Footer() {
                                                             role="list"
                                                             className="mt-8 text-sm leading-6 "
                                                         >
-                                                            {plan.list.map((feature) => (
+                                                            {map.list.map((feature) => (
                                                                 <li key={feature} className="flex " href>
-                                                                    <a href={plan.href}>
+                                                                    <a href={map.href}>
                                                                         {feature}
                                                                     </a>
 

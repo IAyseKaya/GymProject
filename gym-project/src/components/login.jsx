@@ -2,7 +2,7 @@ function login() {
 
 return(
     <div className="login">
-      <div className="nav-block bg-black h-[80px]"></div>
+      <div className="nav-block h-[80px]"></div>
       <div className="flex min-h-[800px] flex-1 flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
@@ -28,7 +28,8 @@ return(
                   type="email"
                   autoComplete="email"
                   required
-                  className="block w-full rounded-md border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6"
+                  className="block w-full rounded-md border-0 py-1.5  shadow-sm 
+                  ring-1 ring-inset ring-gray-300 placeholder:text-gray-500 focus:ring-2 focus:ring-inset focus:ring-slate-600 sm:text-sm sm:leading-6"
                 />
               </div>
             </div>
@@ -68,7 +69,7 @@ return(
 
           <p className="mt-10 text-center text-sm text-gray-500">
             Not a member?{' '}
-            <a href="/" className="font-semibold leading-6 text-red-600 hover:text-red-500">
+            <a href="#" className="font-semibold leading-6 text-red-600 hover:text-red-500">
               Join Us
             </a>
           </p>
