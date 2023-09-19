@@ -24,12 +24,12 @@ const slides = [
 
     {
         id: 3,
-        header: 'Have you registered for the pilates class?',
+        header: 'Have you registered for the pilates lessons?',
         description: '',
         button: 'Register',
         url: 'https://media.discordapp.net/attachments/988883199209926710/1146903037361791117/dylan-gillis-YJdCZba0TYE-unsplash.jpg?width=720&height=480',
         imgAlt: '',
-        href: './login',
+        href: './lessons',
     },
 ];
 
@@ -222,7 +222,7 @@ function MainPage() {
                                         {slides[currentIndex].description}
                                     </p>
                                     <a
-                                        href="login"
+                                        href={slides[currentIndex].href}
                                         className="font-semibold text-white text-lg leading-6 "
                                     >
                                         {slides[currentIndex].button} <span aria-hidden="true">&rarr;</span>
