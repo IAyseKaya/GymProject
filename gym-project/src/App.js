@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./App.css";
 import MainPage from "./MainPage/main-page.jsx";
 import About from "./components/about";
+import Appointment from "./components/appointment";
 import GroupLessons from "./components/groupLessons";
 import MembershipType from "./MainPage/membershipType";
 import CalculateBMI from "./MainPage/calculateBMI";
@@ -9,6 +10,7 @@ import Login from "./components/login";
 import Navbar from "./components/navbar/Navbar.jsx";
 import Footer from "./components/footer/Footer.jsx";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+
 
 
 function App() {
@@ -46,6 +48,7 @@ function App() {
           <Route index element={<MainPage />} />
           <Route path="login" element={<Login />} />
           <Route path="about" element={<About />} />
+          <Route path="appointment" element={<Appointment />} />
           <Route path="lessons" element={<GroupLessons />} />
           <Route path="membership" element={<MembershipType />} />
           <Route path="calculator" element={<CalculateBMI />} />

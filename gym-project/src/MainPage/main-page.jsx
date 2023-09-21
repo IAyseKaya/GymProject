@@ -87,7 +87,7 @@ function MainPage() {
                                             <span>{coach.role}</span>
                                             <p>{coach.role}</p>
                                         </div>
-                                        <a className="coaches-button" href="/lessons">Make An Appointment</a>
+                                        <a className="coaches-button" href={coach.href}>Make An Appointment</a>
                                     </div>
                                 </li>
                             ))}
