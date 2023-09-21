@@ -70,13 +70,13 @@ function Footer() {
                     <div className="mx-auto  min-w-[600px] flex max-w-2xl flex-col gap-y-4">
                         <div className="flex items-center justify-center ">
                             <dl className="grid grid-cols-1 gap-y-10 lg:grid-cols-3">
-                                {maps.map((map) => (
-                                    <article key={map.id} className="item-card flex flex-col max-w-xl ">
+                                {maps.map((item) => (
+                                    <article key={item.id} className="item-card flex flex-col max-w-xl ">
                                         <div >
                                             <div className="group relative">
                                                 <h3 className="mt-3 text-xl font-semibold leading-6">
-                                                    <a href={map.href}>
-                                                        <span >{map.title}</span>
+                                                    <a href={item.href}>
+                                                        <span >{item.title}</span>
                                                     </a>
                                                 </h3>
                                                 <div className="mt-5 mb-5 text-base leading-6 ">
@@ -84,9 +84,9 @@ function Footer() {
                                                         role="list"
                                                         className="mt-8 text-base leading-6 "
                                                     >
-                                                        {map.list.map((feature) => (
+                                                        {item.list.map((feature) => (
                                                             <li key={feature} className="flex" href>
-                                                                <a href={map.href}>
+                                                                <a href={item.href}>
                                                                     {feature}
                                                                 </a>
 
