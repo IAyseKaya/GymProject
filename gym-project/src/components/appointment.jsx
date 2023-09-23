@@ -1,9 +1,8 @@
 
 import coaches from '../data/coaches.js';
 import lessons from "../data/lessons";
-import React from 'react';
-import { DayPicker, Row, RowProps } from 'react-day-picker';
-import { Fragment, useRef, useState } from 'react'
+import { DayPicker, Row } from 'react-day-picker';
+import React,{ Fragment, useRef, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
 import { ExclamationTriangleIcon } from '@heroicons/react/24/outline'
 import { differenceInCalendarDays } from 'date-fns';
@@ -11,6 +10,24 @@ import { format } from 'date-fns';
 import 'react-day-picker/dist/style.css';
 
 function Appointment() {
+    const[name,setName] = useState("");
+    const[lastName,setLastName] = useState("");
+    const[email,setEmail] = useState("");
+    const[phone,setPhone] = useState("");
+    const[coach,setCoach] = useState("");
+    const[lesson,setLesson] = useState("");
+    const[hour,setHour] = useState("");
+    const[city,setCity] = useState("");
+    const[date,setDate] = useState("");
+    
+
+    const modalMessage = (event) => {
+        event.preventDefault();
+        console.log(name +" "+lastName+" "+email+" "+coach+" "+lesson+" "+hour+" "+city+" "+date);
+        setOpen(open);
+    }
+    
+
     const [selected, setSelected] = React.useState(new Date());
 
     let footer = <p>Please pick a day.</p>;
@@ -51,6 +68,7 @@ function Appointment() {
                                         name="first-name"
                                         id="first-name"
                                         autoComplete="given-name"
+                                        onChange={(e) => { setName(e.target.value) }}
                                         className="block w-full rounded-md text-black border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
@@ -66,6 +84,7 @@ function Appointment() {
                                         name="last-name"
                                         id="last-name"
                                         autoComplete="family-name"
+                                        onChange={(e) => { setLastName(e.target.value) }}
                                         className="block w-full rounded-md text-black  border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
@@ -80,6 +99,7 @@ function Appointment() {
                                         name="email"
                                         type="email"
                                         autoComplete="email"
+                                        onChange={(e) => { setEmail(e.target.value) }}
                                         className="block w-full rounded-md text-black border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
@@ -95,6 +115,7 @@ function Appointment() {
                                         name="number"
                                         id="number"
                                         autoComplete="number"
+                                        onChange={(e) => { setPhone(e.target.value) }}
                                         className="block w-full rounded-md text-black  border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
@@ -108,6 +129,7 @@ function Appointment() {
                                         id="coaches"
                                         name="coaches"
                                         autoComplete="coaches-name"
+                                        onChange={(e) => { setCoach(e.target.value) }}
                                         className="block w-full rounded-md text-black  border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
                                     >
                                         {coaches.map((coach) => (
@@ -126,6 +148,7 @@ function Appointment() {
                                         id="lessons"
                                         name="lessons"
                                         autoComplete="lessons-name"
+                                        onChange={(e) => { setLesson(e.target.value) }}
                                         className="block w-full rounded-md text-black  border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
                                     >
                                         {lessons.map((lesson) => (
@@ -145,6 +168,7 @@ function Appointment() {
                                         id="date"
                                         name="date"
                                         autoComplete="date"
+                                        onChange={(e) => { setHour(e.target.value) }}
                                         className="block w-full rounded-md text-black  border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
                                     >
                                         <option value="">09:00 - 10:00</option>
@@ -168,6 +192,7 @@ function Appointment() {
                                         name="city"
                                         id="city"
                                         autoComplete="address-level2"
+                                        onChange={(e) => { setCity(e.target.value) }}
                                         className="block w-full rounded-md text-black  border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
                                     />
                                 </div>
@@ -187,6 +212,7 @@ function Appointment() {
                                         fromDate={new Date()}
                                         components={{ Row: OnlyFutureRow }}
                                         hidden={isPastDate}
+                                        onChange={(e) => { setDate(selected) }}
                                         showOutsideDays
                                     />
 
@@ -258,7 +284,7 @@ function Appointment() {
                         </button>
                     </a>
                     <button
-                        onClick={() => {setOpen(open)}}
+                        onClick={modalMessage}
                         type="submit"
                         className="w-[150px] rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-red-600"
                     >
@@ -301,7 +327,7 @@ function Appointment() {
                                                         </Dialog.Title>
                                                         <div className="mt-2">
                                                             <p className="text-sm text-gray-500">
-                                                                
+                                                               
                                                             </p>
                                                         </div>
                                                     </div>
