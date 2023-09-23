@@ -7,7 +7,7 @@ function Footer() {
     return (
         <div className="footer">
             <div className="space h-10"></div>
-            <div className="hr-1-div border-2 border-lime-300 grid grid-cols-4">
+            <div className="hr-1-div grid grid-cols-4">
                 <hr className="hr-1-1 w-full border-4 border-solid border-red-800" />
                 <hr className="hr-1-2 w-full border-4 border-solid border-red-700" />
                 <hr className="hr-1-3 w-full border-4 border-solid border-red-600" />
@@ -112,11 +112,11 @@ function Footer() {
                     </div>
                 </dl>
             </div>
-            <div className="hr-1-div border-2 border-lime-300 grid grid-cols-4">
-                <hr className="hr-1-1 w-full border-4 border-solid border-red-800" />
-                <hr className="hr-1-2 w-full border-4 border-solid border-red-700" />
-                <hr className="hr-1-3 w-full border-4 border-solid border-red-600" />
-                <hr className="hr-1-4 w-full border-4 border-solid border-red-500" />
+            <div className="hr-1-div grid grid-cols-4">
+                <hr className="hr-1-1 w-full border-4 border-solid border-red-500" />
+                <hr className="hr-1-2 w-full border-4 border-solid border-red-600" />
+                <hr className="hr-1-3 w-full border-4 border-solid border-red-700" />
+                <hr className="hr-1-4 w-full border-4 border-solid border-red-800" />
             </div>
             <div className="space h-10 "></div>
 
