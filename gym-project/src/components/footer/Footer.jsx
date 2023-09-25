@@ -85,12 +85,10 @@ function Footer() {
                                                         className="mt-8 text-base leading-6 "
                                                     >
                                                         {item.list.map((feature) => (
-                                                            <li key={feature} className="flex" href>
+                                                            <li key={feature} className="flex">
                                                                 <a href={item.href}>
                                                                     {feature}
                                                                 </a>
-
-
                                                             </li>
                                                         ))}
                                                     </ul>

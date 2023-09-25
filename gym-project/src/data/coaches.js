@@ -1,5 +1,6 @@
 const coaches = [
   {
+    id:1,
     name: "Leslie Alexander",
     role: "Pilates Instructor",
     imageUrl:
@@ -8,6 +9,7 @@ const coaches = [
     href: "appointment",
   },
   {
+    id:2,
     name: "Dries Vincent",
     role: "Sport Trainer",
     imageUrl:
@@ -16,6 +18,7 @@ const coaches = [
     href: "appointment",
   },
   {
+    id:3,
     name: "Courtney Henry",
     role: "Sport Trainer",
     imageUrl:
@@ -24,6 +27,7 @@ const coaches = [
     href: "appointment",
   },
   {
+    id:4,
     name: "Tom Cook",
     role: "Pilates Instructor",
     imageUrl:

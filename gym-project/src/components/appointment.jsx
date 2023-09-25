@@ -145,7 +145,7 @@ function Appointment() {
                                     >
                                         <option disabled>Select Coaches</option>
                                         {coaches.map((coach) => (
-                                            <option value={coach.name}>{coach.name}-{coach.role}</option>
+                                            <option key={coach.id}  value={coach.name}>{coach.name}-{coach.role}</option>
                                         ))}
                                     </select>
 
@@ -165,7 +165,7 @@ function Appointment() {
                                         className="block w-full rounded-md text-black  border-0 py-1.5  shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-red-600 sm:text-sm sm:leading-6"
                                     >   <option disabled>Select Lesson</option>
                                         {lessons.map((lesson) => (
-                                            <option value={lesson.name}>{lesson.name}</option>
+                                            <option key={lesson.id} value={lesson.name}>{lesson.name}</option>
                                         ))}
                                     </select>
                                 </div>
