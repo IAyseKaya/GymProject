@@ -26,7 +26,7 @@ function MainPage() {
 
     return (
         <div className="mainpage ">
-            <div className="slider">
+            <div className="slider-container">
                 <div className='w-full h-[900px] m-auto relative group'>
                     <div
                         style={{ backgroundImage: `url(${slides[currentIndex].url})` }}

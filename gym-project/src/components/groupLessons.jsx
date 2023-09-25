@@ -52,11 +52,11 @@ function GroupLessons() {
                                             {lesson.name}
                                         </a>
                                     </h3>
-                                    <p className="h-28 text-base font-semibold ">{lesson.description}</p>
+                                    <p className=" text-base font-semibold ">{lesson.description}</p>
                                     <div className="pb-10">
-                                        <a
+                                    <a
                                         
-                                        className=" h-28 mb-10 text-base text-red-500 leading-6 "
+                                        className="mb-10 text-base text-red-500 leading-6 "
                                     >
                                         Join Lesson<span aria-hidden="true">&rarr;</span>
                                     </a>

@@ -67,7 +67,7 @@ function Footer() {
                         </div>
                     </div>
 
-                    <div className="mx-auto  min-w-[600px] flex max-w-2xl flex-col gap-y-4">
+                    <div className="mx-auto   flex max-w-2xl flex-col gap-y-4">
                         <div className="flex items-center justify-center ">
                             <dl className="grid grid-cols-1 gap-y-10 lg:grid-cols-3">
                                 {maps.map((item) => (
