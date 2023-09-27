@@ -28,7 +28,7 @@ function Navbar() {
                             <a href="/" className="-m-1.5 p-1.5">
                                 <span className="sr-only">AysGym</span>
                                 <img
-                                    className="h-8 w-auto"
+                                    className="w-auto h-9"
                                     src="https://media.discordapp.net/attachments/988883199209926710/1146903215053484042/pngaaa.com-2946803.png"
                                     alt=""
                                 />
