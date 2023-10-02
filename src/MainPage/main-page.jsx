@@ -35,7 +35,7 @@ function MainPage() {
                         <div className="slider-text absolute flex items-center justify-center h-full w-full">
                             <div className="text flex items-center justify-center h-full w-full">
                                 <div className="flex flex-col items-center justify-center m-10 h-full w-full">
-                                    <h1 className="text-4xl text-white font-bold tracking-tight drop-shadow-lg   sm:text-6xl">
+                                    <h1 className="text-4xl text-red-500 font-bold tracking-tight drop-shadow-lg   sm:text-6xl">
                                         {slides[currentIndex].header}
                                     </h1>
                                     <p className="mt-4 text-xl text-white drop-shadow-lg ">
